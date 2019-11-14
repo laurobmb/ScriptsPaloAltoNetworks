@@ -121,11 +121,11 @@ class PALO_ALTO(object):
 
 	def lendo_args_cli(self):
 		parser = argparse.ArgumentParser()
-		parser.add_argument('-l', '--list', type=str, help="listar schedules do firewall Palo Alto")
-		parser.add_argument('-s', '--set', type=str, help="Setar schedule  do firewall Palo Alto com a data do dia anterior até às 29:59 do mesmo dia", choices=['set'])
+		parser.add_argument('-l', '--list', help="listar schedules do firewall Palo Alto",action="store_true")
+		parser.add_argument('-c', '--commit', help="Aplicar configurações do Firewall",action="store_true")
+		parser.add_argument('-s', '--set', help="Setar schedule  do firewall Palo Alto com a data do dia anterior até às 29:59 do mesmo dia",action="store_true")
 		parser.add_argument('-o', '--objeto', type=str, help="Shedule ja configurada no firewall")
 		parser.add_argument('-f', '--firewall', type=str, help="Endereço IP do firewall Palo Alto")
-		parser.add_argument('-c', '--commit', type=str, help="Aplicar configurações do Firewall", choices=['commit'])
 		parser.add_argument('-j', '--job', type=str, help="Verificar Jobs dos commits do PaloAlto")		
 		self.args = parser.parse_args()
     
