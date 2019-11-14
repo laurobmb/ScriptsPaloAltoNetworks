@@ -71,7 +71,7 @@ class PALO_ALTO(object):
 	def lendo_args_cli(self):
 		parser = argparse.ArgumentParser()
 		parser.add_argument('-f', '--firewall', type=str, help="Endereço IP do firewall Palo Alto")
-		parser.add_argument('-c', '--commit', type=str, help="Aplicar configurações do Firewall", choices=['commit'])
+		parser.add_argument('-c', '--commit', help="Aplicar configurações do Firewall",action="store_true")
 		parser.add_argument('-j', '--job', type=str, help="Verificar Jobs dos commits do PaloAlto")		
 		self.args = parser.parse_args()
     
